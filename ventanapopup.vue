@@ -54,6 +54,7 @@
     position:absolute;
     right:5px;
     top:5px;
+    z-index:999999999999999999999999999999999999999;
 }
 
 .areadatos{
