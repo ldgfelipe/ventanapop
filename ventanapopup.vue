@@ -1,11 +1,13 @@
 <template>
 <div class="gralventanapop">
-<div class="backpopup" @click="cierra()"></div>
+<div class="backpopup" @click="cierra()" :style="'background-color:'+bgcolor+'; opacity:'+opacity+';'"></div>
 <div class="infopop">
-    <div class="btn btn-danger btnclose"  @click="cierra()">
+    <div class="btn btn-danger btnclose"  @click="cierra()" >
         x
     </div>
-    <slot class="areadatos"></slot>
+    <div class="areadatos">
+        <slot></slot>
+    </div>
 
 </div>
 </div>
@@ -33,8 +35,6 @@
     max-width:100%;
     max-height:100%;
     height:100%;
-    filter:alpha(opacity=70);
-    opacity:0.7;
     z-index:0;
 }
 
@@ -62,19 +62,28 @@
     max-height:100%;
     max-width:100%;
     overflow: auto;
-    padding:3px;
+    padding:10px;
+    
 }
 </style>
 <script>
 module.exports={
     data(){
         return {
-
+            
         }
     },
     methods:{
         cierra(){
             this.$emit("cerrarpop",false)
+        }
+    },
+    props:{
+        bgcolor:{
+            default:'#000'
+        },
+        opacity:{
+            default:'0.7'
         }
     }
 }
