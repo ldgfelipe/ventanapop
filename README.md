@@ -1,7 +1,7 @@
 # ventanapop
 
 Simple ventana pop up configurable 
-
+utiliza bootstrap 
 para modal- alertas u otro tipo de eventos para mostrar en ventana 
 
 props
